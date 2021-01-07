@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>TechCommit個人制作</title>
+    <style>
+      #container {
+        width: 90%;
+        margin: 0 auto;
+        padding-top: 10px;
+      }
+      .box {
+        position: relative;
+        height: calc(100%);
+      }
+      .box img {
+        width:100%;
+      }
+      .btn_box {
+        position: absolute;
+        top: 64%;
+        left: 50%;
+        -webkit-transform: translate(-50%,-50%);
+        transform: translate(-50%,-50%);
+      }
+      /* ボタンの装飾 */
+      .btn {
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         border-radius:50%  50%  50%  50%  / 60%   60%   40%  40%;
+         width: 80px;
+         height: 80px;
+         background-color: #ffa500;
+         text-align: center;
+         user-select: none;
+         box-shadow: 5px 5px 5px rgba(0,0,0,0.4);
+         color:#FFF;
+         border:solid 2px #ffa500;
+         font-size:26px;
+         margin:0px 0 0 0px;
+      }
+      /* ボタンを押した時のボタンの挙動 */
+      .btn:active {
+        box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
+        margin: 2px 0 0 2px;
+        transition: all 0.2s ease;
+      }
+      .meigen {
+        position: absolute;
+        top: 92%;
+        left: 50%;
+        transform: translateY(-50%) translateX(-50%);
+        -webkit- transform: translateY(-50%) translateX(-50%);
+        width: 70%;
+        height: 130px;
+        background:		#fefefd;
+        border-radius: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color:#734e30;
+        font-size: 120%;
+        font-family: 'Times New Roman',sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <h1>
+        <a href="https://note.com/yukikojava/n/nc559b8e8ac15"></a>
+      </h1>
+      <!-- 画像ボタン -->
+      <div class="box">
+        <img
+          src="https://assets.st-note.com/img/1606651946441-8m9fB8YGys.jpg"
+          alt=""
+        />
+        <div class="btn_box">
+          <div id="sound_btn" class="btn">push</div>
+        </div>
+        <!-- 名言 -->
+        <div class="meigen">
+          <div id="meigen"></div>
+        </div>
+      </div>
+
+      <!-- 音源 -->
+      <audio id="sound_shine" preload="auto">
+        <source src="https://soundeffect-lab.info/sound/anime/mp3/shine1.mp3" />
+      </audio>
+    </div>
+    <!-- Javascript -->
+    <script>
+      window.onload = () => {
+        // PUSHボタンをクリックした時
+        document.getElementById("sound_btn").addEventListener("click", () => {
+          // 効果音を鳴らす
+          const se = document.getElementById("sound_shine");
+          se.play();
+          // 名言を設定する
+          const meigen = [
+            "「Security is mostly a superstition. life is either a daring adventure or nothing.」",
+
+            "「Stay Hungry. Stay Foolish.」",
+            "「Great things are not done by impulse, but by a series of small things brought together」",
+            "「Believing that the dots will connect down the road will give you the confidence to follow your heart」",
+            "「Your imagination is your preview of life's coming attractions.」",
+            "「Failure is another stepping stone to greatness.」",
+            "「One of these days is none of these days.」",
+            "「Honesty is always the best policy.」",
+            "「The creation of a thousand forests is in one acorn.」",
+            "「Knowledge is power.」",
+            "「The future starts today, not tomorrow.」",
+            "「Life isn't about finding yourself. Life is about creating yourself. 」",
+            "「Love is like a flower – you’ve got to let it grow.」",
+            "「Love does not dominate; it cultivates.」",
+            "「You must love him, before to you he will seem worthy of your love.」",
+            "「There is always a better way.」",
+            "「It always seems impossible until it’s done.」",
+            "「It always seems impossible until it’s done.」",
+            "「A dream you dream alone is only a dream. A dream you dream together is reality.」",
+            "「There is always light behind the clouds.」",
+            "「Peace begins with a smile.」",
+            "「Indecision is often worse than wrong action.」",
+            "「Find purpose, the means will follow.」",
+            "「It requires more courage to suffer than to die.」",
+            "「He who moves not forward, goes backward.」",
+            "「Follow Your Heart❤」",
+            "「Get Over Yourself❤」",
+            "「Simplicity is the ultimate sophistication.」",
+            "「You’ll never find a rainbow if you’re looking down.」",
+            "「Only the pure in heart can make a good soup.」",
+            "「Your time is limited, so don't waste it living someone else's life.」",
+            "「The greatest glory in living lies not in never falling, but in rising every time we fall.」",
+            "「Love the life you live, Live the life you love❤」",
+
+            "「Don’t spend time beating on a wall, hoping to transform it into a door」",
+            "「When it is dark enough, you can see the stars.」",
+            "「Love dies only when growth stops❤」",
+            "「Connecting the Dots❤」"
+          ];
+          // 名言をランダムに表示する
+          document.getElementById("meigen").innerHTML =
+            meigen[Math.floor(Math.random() * meigen.length)];
+        });
+      };
+    </script>
+  </body>
+</html>
